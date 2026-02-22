@@ -38,7 +38,7 @@
         <div class="grid grid-cols-3 gap-[16px]">
             <div class="bg-[#FFFFFF] p-[20px] space-y-[15px] rounded-lg">
                 <p class="text-[#323B49] font-medium text-[14px]">Total</p>
-                <p class="text-[#002C5C] font-bold text-[24px]">8</p>
+                <p id="all-count" class="text-[#002C5C] font-bold text-[24px]">8</p>
             </div>
             <div class="bg-[#FFFFFF] p-[20px] space-y-[15px] rounded-lg">
                 <p class="text-[#323B49] font-medium text-[14px]">Interview</p>
@@ -52,9 +52,10 @@
     </header>
 
     <section  class="space-y-[20px] py-[40px] w-[80%] mx-auto">
-        <div id="all-jb-li" class="flex justify-between">
+       <div>
+         <div id="all-jb-li" class="flex justify-between">
             <h3 class="font-semibold text-[#002C5C] text-[20px]">Available Jobs</h3>
-            <p class="font-medium text-[#64748B]">8 Jobs</p>
+            <p class="font-medium text-[#64748B]"><span id="all-title-count">8</span> Jobs</p>
         </div>
        <div id="int-jb-li" class="hidden">
          <div  class=" flex justify-between ">
@@ -68,8 +69,9 @@
             <p class="font-medium text-[#64748B]"><span id="rej-title-count">0</span> of 8 Jobs</p>
         </div>
        </div>
+       </div>
         <!-- button div -->
-        <div class="flex gap-[20px]">
+        <div  class="flex gap-[20px]">
             <button onclick="showOnly('all') , btnColorMain('all-btn') , availableJobs('all-jb-li')" id="all-btn" class="btn bg-[#3B82F6] w-[80px] text-white">All</button>
             <button onclick="showOnly('main-inter-btn') , btnColorMain('main-inter-btn') , availableJobs('int-jb-li')" id="main-inter-btn" class="btn  w-[80px] ">Interview</button>
             <button onclick="showOnly('main-rejec-btn') , btnColorMain('main-rejec-btn') , availableJobs('rej-jb-li')" id="main-rejec-btn" class="btn  w-[80px] ">Rejected</button>
@@ -85,18 +87,18 @@
                             <h3 class="text-[#002C5C] font-semibold text-[18px]">Mobile First Corp</h3>
                            <p class="text-[#64748B]">React Native Developer</p>
                         </div>
-                        <div>
-                            <button class="btn"><i class="fa-solid fa-trash"></i></button>
+                        <div class="">
+                            <button class=" btn"><i class=" dlt-btn fa-solid fa-trash"></i></button>
                         </div>
                     </div>
                     <p class="text-[#64748B]">Remote • Full-time • $130,000 - $175,000</p>
                     <div class="space-y-[10px]">
-                        <p class=" text-[#002C5C] font-medium text-[14px] bg-blue-100 max-w-[113px] px-3 py-2 rounded statuss">PENDING</p>
+                        <p class=" text-[#002C5C] font-medium text-[14px] bg-blue-100 max-w-[113px] px-3 py-2 rounded statuss statuss2">PENDING</p>
                         <p class="text-[#323B49] text-[14px]">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
                     </div>
                     <div class="flex gap-[8px]">
-                        <button onclick="interBtn('inter-btn1')" id="inter-btn1" class="btn bg-transparent border-[#10B981] text-[#10B981]">INTERVIEW</button>
-                        <button onclick="rejectBtn('rej-btn1')" id="rej-btn1" class="btn bg-transparent border-[#EF4444] text-[#EF4444]">REJECTED</button>
+                        <button onclick="interBtn('inter-btn1')" id="inter-btn1" class="btn bg-transparent inter-btn border-[#10B981] text-[#10B981]">INTERVIEW</button>
+                        <button onclick="rejectBtn('rej-btn1')" id="rej-btn1" class="btn bg-transparent rej-btn border-[#EF4444] text-[#EF4444]">REJECTED</button>
                     </div>
                 </div>
             </div>
@@ -110,7 +112,7 @@
                        <p class="text-[#64748B]">Web Designer & Developer</p>
                     </div>
                     <div>
-                        <button class="btn"><i class="fa-solid fa-trash"></i></button>
+                        <button class="btn"><i class="dlt-btn fa-solid fa-trash"></i></button>
                     </div>
                 </div>
                 <p class="text-[#64748B]">Los Angeles, CA • Part-time • $80,000 - $120,000</p>
@@ -119,8 +121,8 @@
                     <p class="text-[#323B49] text-[14px]">Create stunning web experiences for high-profile clients. Must have portfolio and experience with modern web design trends.</p>
                 </div>
                 <div class="flex gap-[8px]">
-                    <button onclick="interBtn('inter-btn2')" id="inter-btn2" class="btn bg-transparent border-[#10B981] text-[#10B981]">INTERVIEW</button>
-                    <button onclick="rejectBtn('rej-btn2')" id="rej-btn2" class="btn bg-transparent border-[#EF4444] text-[#EF4444]">REJECTED</button>
+                    <button onclick="interBtn('inter-btn2')" id="inter-btn2" class="btn bg-transparent inter-btn border-[#10B981] text-[#10B981]">INTERVIEW</button>
+                    <button onclick="rejectBtn('rej-btn2')" id="rej-btn2" class="btn bg-transparent rej-btn border-[#EF4444] text-[#EF4444]">REJECTED</button>
                 </div>
             </div>
             </div>
@@ -133,7 +135,7 @@
                        <p class="text-[#64748B]">Data Visualization Specialist</p>
                     </div>
                     <div>
-                        <button class="btn"><i class="fa-solid fa-trash"></i></button>
+                        <button class="btn"><i class="dlt-btn fa-solid fa-trash"></i></button>
                     </div>
                 </div>
                 <p class="text-[#64748B]">Boston, MA • Full-time • $125,000 - $165,000</p>
@@ -142,8 +144,8 @@
                     <p class="text-[#323B49] text-[14px]">Transform complex data into compelling visualizations. Required skills: D3.js, React, and strong analytical thinking.</p>
                 </div>
                 <div class="flex gap-[8px]">
-                    <button onclick="interBtn('inter-btn3')" id="inter-btn3" class="btn bg-transparent border-[#10B981] text-[#10B981]">INTERVIEW</button>
-                    <button onclick="rejectBtn('rej-btn3')" id="rej-btn3" class="btn bg-transparent border-[#EF4444] text-[#EF4444]">REJECTED</button>
+                    <button onclick="interBtn('inter-btn3')" id="inter-btn3" class="btn bg-transparent inter-btn border-[#10B981] text-[#10B981]">INTERVIEW</button>
+                    <button onclick="rejectBtn('rej-btn3')" id="rej-btn3" class="btn bg-transparent rej-btn border-[#EF4444] text-[#EF4444]">REJECTED</button>
                 </div>
             </div>
             </div>
@@ -156,7 +158,7 @@
                        <p class="text-[#64748B]">Backend Developer</p>
                     </div>
                     <div>
-                        <button class="btn"><i class="fa-solid fa-trash"></i></button>
+                        <button class="btn"><i class="dlt-btn fa-solid fa-trash"></i></button>
                     </div>
                 </div>
                 <p class="text-[#64748B]">Seattle, WA • Full-time • $140,000 - $190,000</p>
@@ -165,8 +167,8 @@
                     <p class="text-[#323B49] text-[14px]">Design and maintain scalable backend systems using Python and AWS. Work with modern DevOps practices and cloud infrastructure.</p>
                 </div>
                 <div class="flex gap-[8px]">
-                    <button onclick="interBtn('inter-btn4')" id="inter-btn4" class="btn bg-transparent border-[#10B981] text-[#10B981]">INTERVIEW</button>
-                    <button onclick="rejectBtn('rej-btn4')" id="rej-btn4" class="btn bg-transparent border-[#EF4444] text-[#EF4444]">REJECTED</button>
+                    <button onclick="interBtn('inter-btn4')" id="inter-btn4" class="btn bg-transparent inter-btn border-[#10B981] text-[#10B981]">INTERVIEW</button>
+                    <button onclick="rejectBtn('rej-btn4')" id="rej-btn4" class="btn bg-transparent rej-btn border-[#EF4444] text-[#EF4444]">REJECTED</button>
                 </div>
             </div>
             </div>
@@ -179,7 +181,7 @@
                        <p class="text-[#64748B]">UI/UX Engineer</p>
                     </div>
                     <div>
-                        <button class="btn"><i class="fa-solid fa-trash"></i></button>
+                        <button class="btn"><i class="dlt-btn fa-solid fa-trash"></i></button>
                     </div>
                 </div>
                 <p class="text-[#64748B]">Austin, TX • Full-time • $110,000 - $150,000</p>
@@ -188,8 +190,8 @@
                     <p class="text-[#323B49] text-[14px]">Create beautiful and functional user interfaces for our suite of products. Strong design skills and frontend development expertise required.</p>
                 </div>
                 <div class="flex gap-[8px]">
-                    <button onclick="interBtn('inter-btn5')" id="inter-btn5" class="btn bg-transparent border-[#10B981] text-[#10B981]">INTERVIEW</button>
-                    <button onclick="rejectBtn('rej-btn5')" id="rej-btn5" class="btn bg-transparent border-[#EF4444] text-[#EF4444]">REJECTED</button>
+                    <button onclick="interBtn('inter-btn5')" id="inter-btn5" class="btn bg-transparent inter-btn border-[#10B981] text-[#10B981]">INTERVIEW</button>
+                    <button onclick="rejectBtn('rej-btn5')" id="rej-btn5" class="btn bg-transparent rej-btn border-[#EF4444] text-[#EF4444]">REJECTED</button>
                 </div>
             </div>
             </div>
@@ -202,7 +204,7 @@
                        <p class="text-[#64748B]">JavaScript Developer</p>
                     </div>
                     <div>
-                        <button class="btn"><i class="fa-solid fa-trash"></i></button>
+                        <button class="btn"><i class="dlt-btn fa-solid fa-trash"></i></button>
                     </div>
                 </div>
                 <p class="text-[#64748B]">New York, NY • Full-time • $130,000 - $170,00</p>
@@ -211,8 +213,8 @@
                     <p class="text-[#323B49] text-[14px]">Build enterprise applications with JavaScript and modern frameworks. We offer competitive compensation, health insurance, and professional development opportunities.</p>
                 </div>
                 <div class="flex gap-[8px]">
-                    <button onclick="interBtn('inter-btn6')" id="inter-btn6" class="btn bg-transparent border-[#10B981] text-[#10B981]">INTERVIEW</button>
-                    <button onclick="rejectBtn('rej-btn6')" id="rej-btn6" class="btn bg-transparent border-[#EF4444] text-[#EF4444]">REJECTED</button>
+                    <button onclick="interBtn('inter-btn6')" id="inter-btn6" class="btn bg-transparent inter-btn border-[#10B981] text-[#10B981]">INTERVIEW</button>
+                    <button onclick="rejectBtn('rej-btn6')" id="rej-btn6" class="btn bg-transparent rej-btn border-[#EF4444] text-[#EF4444]">REJECTED</button>
                 </div>
             </div>
            </div>
@@ -225,7 +227,7 @@
                        <p class="text-[#64748B]">Full Stack Engineer</p>
                     </div>
                     <div>
-                        <button class="btn"><i class="fa-solid fa-trash"></i></button>
+                        <button class="btn"><i class="dlt-btn fa-solid fa-trash"></i></button>
                     </div>
                 </div>
                 <p class="text-[#64748B]">Remote • Full-time • $120,000 - $160,000</p>
@@ -234,8 +236,8 @@
                     <p class="text-[#323B49] text-[14px]">Join our fast-growing startup and work on our core platform. Experience with Node.js and React required. Great benefits and equity package included.</p>
                 </div>
                 <div class="flex gap-[8px]">
-                    <button onclick="interBtn('inter-btn7')" id="inter-btn7" class="btn bg-transparent border-[#10B981] text-[#10B981]">INTERVIEW</button>
-                    <button onclick="rejectBtn('rej-btn7')" id="rej-btn7" class="btn bg-transparent border-[#EF4444] text-[#EF4444]">REJECTED</button>
+                    <button onclick="interBtn('inter-btn7')" id="inter-btn7" class="btn bg-transparent inter-btn border-[#10B981] text-[#10B981]">INTERVIEW</button>
+                    <button onclick="rejectBtn('rej-btn7')" id="rej-btn7" class="btn bg-transparent rej-btn border-[#EF4444] text-[#EF4444]">REJECTED</button>
                 </div>
             </div>
             </div>
@@ -248,7 +250,7 @@
                        <p class="text-[#64748B]">Senior Frontend Developer</p>
                     </div>
                     <div>
-                        <button class="btn"><i class="fa-solid fa-trash"></i></button>
+                        <button class="btn"><i class="dlt-btn fa-solid fa-trash"></i></button>
                     </div>
                 </div>
                 <p class="text-[#64748B]">San Francisco, CA • Full-time • $130,000 - $175,000</p>
@@ -257,8 +259,8 @@
                     <p class="text-[#323B49] text-[14px]">We are looking for an experienced Frontend Developer to build scalable web applications using React and TypeScript. You will work with a talented team on cutting-edge projects.</p>
                 </div>
                 <div class="flex gap-[8px]">
-                    <button onclick="interBtn('inter-btn8')" id="inter-btn8" class="btn bg-transparent border-[#10B981] text-[#10B981]">INTERVIEW</button>
-                    <button onclick="rejectBtn('rej-btn8')" id="rej-btn8" class="btn bg-transparent border-[#EF4444] text-[#EF4444]">REJECTED</button>
+                    <button onclick="interBtn('inter-btn8')" id="inter-btn8" class="btn bg-transparent inter-btn border-[#10B981] text-[#10B981]">INTERVIEW</button>
+                    <button onclick="rejectBtn('rej-btn8')" id="rej-btn8" class="btn bg-transparent rej-btn border-[#EF4444] text-[#EF4444]">REJECTED</button>
                 </div>
             </div>
             </div>

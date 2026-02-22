@@ -82,12 +82,13 @@ function interBtn (id){
 function rejectBtn(id){
     const getBtn = document.getElementById(id);
     const getParent = getBtn.parentNode.parentNode.parentNode;
-    const change = getParent.querySelector('.statuss');
+    const change = getParent.querySelector('.statuss2');
     change.innerText = 'REJECTED'
     change.classList.remove('text-[#002C5C]');
     change.classList.add('text-red-500');
     const parentInner = getParent.innerHTML;
-    getParent.querySelector('.statuss').classList.remove('statuss');
+    getParent.querySelector('.statuss2').classList.remove('statuss2');
+    
        
     
  
@@ -114,3 +115,24 @@ function rejectBtn(id){
     const rejNoJob = document.getElementById('rej-no-job');
    rejNoJob.classList.add('hidden');
 }
+
+
+document.getElementById('all').addEventListener('click' , function(event){
+    if(event.target.classList.contains('dlt-btn')){
+        const parent = event.target.parentNode.parentNode.parentNode;
+        parent.classList.add('hidden');
+        console.log(parent);
+
+        const allCount = document.getElementById('all-count');
+        let allCountNum = Number(allCount.innerText);
+        allCountNum--;
+        allCount.innerText = allCountNum;
+
+        const allTitleCount = document.getElementById('all-title-count');
+        let allTitleCountNum = Number(allTitleCount.innerText);
+        allTitleCountNum--;
+        allTitleCount.innerText = allTitleCountNum;
+    }
+})
+
+
