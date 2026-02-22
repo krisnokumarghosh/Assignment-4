@@ -119,7 +119,7 @@ function rejectBtn(id){
 
 document.getElementById('all').addEventListener('click' , function(event){
     if(event.target.classList.contains('dlt-btn')){
-        const parent = event.target.parentNode.parentNode.parentNode;
+        const parent = event.target.parentNode.parentNode.parentNode.parentNode;
         parent.classList.add('hidden');
         console.log(parent);
 
