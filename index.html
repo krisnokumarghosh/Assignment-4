@@ -40,21 +40,33 @@
             </div>
             <div class="bg-[#FFFFFF] p-[20px] space-y-[15px] rounded-lg">
                 <p class="text-[#323B49] font-medium text-[14px]">Rejected</p>
-                <p class="text-[#EF4444] font-bold text-[24px]">0</p>
+                <p id="reject-count" class="text-[#EF4444] font-bold text-[24px]">0</p>
             </div>
         </div>
     </header>
 
     <section  class="space-y-[20px] py-[40px] w-[80%] mx-auto">
-        <div class="flex justify-between">
+        <div id="all-jb-li" class="flex justify-between">
             <h3 class="font-semibold text-[#002C5C] text-[20px]">Available Jobs</h3>
             <p class="font-medium text-[#64748B]">8 Jobs</p>
         </div>
+       <div id="int-jb-li" class="hidden">
+         <div  class=" flex justify-between ">
+            <h3 class="font-semibold text-[#002C5C] text-[20px]">Available Jobs</h3>
+            <p class="font-medium text-[#64748B]"><span id="int-title-count">0</span> of 8 Jobs</p>
+        </div>
+       </div>
+       <div id="rej-jb-li" class="hidden">
+         <div  class="flex justify-between">
+            <h3 class="font-semibold text-[#002C5C] text-[20px]">Available Jobs</h3>
+            <p class="font-medium text-[#64748B]"><span id="rej-title-count">0</span> of 8 Jobs</p>
+        </div>
+       </div>
         <!-- button div -->
         <div class="flex gap-[20px]">
-            <button onclick="showOnly('all') , btnColorMain('all-btn')" id="all-btn" class="btn bg-[#3B82F6] w-[80px] text-white">All</button>
-            <button id="main-inter-btn" class="btn  w-[80px] ">Interview</button>
-            <button id="main-rejec-btn" class="btn  w-[80px] ">Rejected</button>
+            <button onclick="showOnly('all') , btnColorMain('all-btn') , availableJobs('all-jb-li')" id="all-btn" class="btn bg-[#3B82F6] w-[80px] text-white">All</button>
+            <button onclick="showOnly('main-inter-btn') , btnColorMain('main-inter-btn') , availableJobs('int-jb-li')" id="main-inter-btn" class="btn  w-[80px] ">Interview</button>
+            <button onclick="showOnly('main-rejec-btn') , btnColorMain('main-rejec-btn') , availableJobs('rej-jb-li')" id="main-rejec-btn" class="btn  w-[80px] ">Rejected</button>
         </div>
         <!-- card div -->
         <div id="all" class="space-y-[30px]">
@@ -78,7 +90,7 @@
                     </div>
                     <div class="flex gap-[8px]">
                         <button onclick="interBtn('inter-btn1')" id="inter-btn1" class="btn bg-transparent border-[#10B981] text-[#10B981]">INTERVIEW</button>
-                        <button class="btn bg-transparent border-[#EF4444] text-[#EF4444]">REJECTED</button>
+                        <button onclick="rejectBtn('rej-btn1')" id="rej-btn1" class="btn bg-transparent border-[#EF4444] text-[#EF4444]">REJECTED</button>
                     </div>
                 </div>
             </div>
@@ -102,7 +114,7 @@
                 </div>
                 <div class="flex gap-[8px]">
                     <button onclick="interBtn('inter-btn2')" id="inter-btn2" class="btn bg-transparent border-[#10B981] text-[#10B981]">INTERVIEW</button>
-                    <button class="btn bg-transparent border-[#EF4444] text-[#EF4444]">REJECTED</button>
+                    <button onclick="rejectBtn('rej-btn2')" id="rej-btn2" class="btn bg-transparent border-[#EF4444] text-[#EF4444]">REJECTED</button>
                 </div>
             </div>
             </div>
@@ -125,7 +137,7 @@
                 </div>
                 <div class="flex gap-[8px]">
                     <button onclick="interBtn('inter-btn3')" id="inter-btn3" class="btn bg-transparent border-[#10B981] text-[#10B981]">INTERVIEW</button>
-                    <button class="btn bg-transparent border-[#EF4444] text-[#EF4444]">REJECTED</button>
+                    <button onclick="rejectBtn('rej-btn3')" id="rej-btn3" class="btn bg-transparent border-[#EF4444] text-[#EF4444]">REJECTED</button>
                 </div>
             </div>
             </div>
@@ -148,7 +160,7 @@
                 </div>
                 <div class="flex gap-[8px]">
                     <button onclick="interBtn('inter-btn4')" id="inter-btn4" class="btn bg-transparent border-[#10B981] text-[#10B981]">INTERVIEW</button>
-                    <button class="btn bg-transparent border-[#EF4444] text-[#EF4444]">REJECTED</button>
+                    <button onclick="rejectBtn('rej-btn4')" id="rej-btn4" class="btn bg-transparent border-[#EF4444] text-[#EF4444]">REJECTED</button>
                 </div>
             </div>
             </div>
@@ -171,7 +183,7 @@
                 </div>
                 <div class="flex gap-[8px]">
                     <button onclick="interBtn('inter-btn5')" id="inter-btn5" class="btn bg-transparent border-[#10B981] text-[#10B981]">INTERVIEW</button>
-                    <button class="btn bg-transparent border-[#EF4444] text-[#EF4444]">REJECTED</button>
+                    <button onclick="rejectBtn('rej-btn5')" id="rej-btn5" class="btn bg-transparent border-[#EF4444] text-[#EF4444]">REJECTED</button>
                 </div>
             </div>
             </div>
@@ -194,7 +206,7 @@
                 </div>
                 <div class="flex gap-[8px]">
                     <button onclick="interBtn('inter-btn6')" id="inter-btn6" class="btn bg-transparent border-[#10B981] text-[#10B981]">INTERVIEW</button>
-                    <button class="btn bg-transparent border-[#EF4444] text-[#EF4444]">REJECTED</button>
+                    <button onclick="rejectBtn('rej-btn6')" id="rej-btn6" class="btn bg-transparent border-[#EF4444] text-[#EF4444]">REJECTED</button>
                 </div>
             </div>
            </div>
@@ -217,7 +229,7 @@
                 </div>
                 <div class="flex gap-[8px]">
                     <button onclick="interBtn('inter-btn7')" id="inter-btn7" class="btn bg-transparent border-[#10B981] text-[#10B981]">INTERVIEW</button>
-                    <button class="btn bg-transparent border-[#EF4444] text-[#EF4444]">REJECTED</button>
+                    <button onclick="rejectBtn('rej-btn7')" id="rej-btn7" class="btn bg-transparent border-[#EF4444] text-[#EF4444]">REJECTED</button>
                 </div>
             </div>
             </div>
@@ -240,7 +252,7 @@
                 </div>
                 <div class="flex gap-[8px]">
                     <button onclick="interBtn('inter-btn8')" id="inter-btn8" class="btn bg-transparent border-[#10B981] text-[#10B981]">INTERVIEW</button>
-                    <button class="btn bg-transparent border-[#EF4444] text-[#EF4444]">REJECTED</button>
+                    <button onclick="rejectBtn('rej-btn8')" id="rej-btn8" class="btn bg-transparent border-[#EF4444] text-[#EF4444]">REJECTED</button>
                 </div>
             </div>
             </div>
@@ -249,7 +261,7 @@
     </section>
 
     <section id="interview"  class="space-y-[20px] py-[40px] w-[80%] mx-auto hidden">
-        <div class="bg-white py-[60px] space-y-[20px] rounded-lg">
+        <div id="int-no-job" class="bg-white py-[60px] space-y-[20px] rounded-lg">
             <div>
                 <img src="./jobs.png" alt="" class="mx-auto">
             </div>
@@ -261,7 +273,7 @@
     </section>
 
     <section id="rejected"  class="space-y-[20px] py-[40px] w-[80%] mx-auto hidden">
-        <div class="bg-white py-[60px] space-y-[20px] rounded-lg">
+        <div id="rej-no-job" class="bg-white py-[60px] space-y-[20px] rounded-lg">
             <div>
                 <img src="./jobs.png" alt="" class="mx-auto">
             </div>
