@@ -29,31 +29,7 @@ document.getElementById('rejected').addEventListener('click' , function(event){
      }
      else if(event.target.classList.contains('inter-btn')){
         const parent2 = event.target.parentNode.parentNode.parentNode;
-        const change = parent2.querySelector('.again-stat');
-        change.innerText = 'INTERVIEW'
-     change.classList.remove('text-red-500');
-    change.classList.add('text-green-500');
         parent2.classList.add('hidden');
-        const parentTwoInner = parent2.innerHTML;
-
-        const interContainer = document.getElementById('interview');
-
-    const newDiv = document.createElement('div');
-    newDiv.innerHTML = `${parentTwoInner}`
-    
-
-    interContainer.appendChild(newDiv);
-
-     const interCount = document.getElementById('inter-count');
-    let interCountNum = Number(interCount.innerText);
-    interCountNum++;
-    interCount.innerText = interCountNum;
-
-    const intTitle = document.getElementById('int-title-count');
-    let intTitleNum = Number(intTitle.innerText);
-    intTitleNum++;
-    intTitle.innerText = intTitleNum;
-        
         console.log(parent2);
 
          const rejectMainCount = document.getElementById('reject-count');

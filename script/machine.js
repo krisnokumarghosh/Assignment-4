@@ -49,12 +49,10 @@ function interBtn (id){
     const change = getParent.querySelector('.statuss');
     change.innerText = 'INTERVIEW'
      change.classList.remove('text-[#002C5C]');
+     change.classList.remove('text-red-500');
     change.classList.add('text-green-500');
     const parentInner = getParent.innerHTML;
-    getParent.querySelector('.statuss').classList.remove('statuss');
     
-    
- 
     const interContainer = document.getElementById('interview');
 
     const newDiv = document.createElement('div');
@@ -87,10 +85,6 @@ function rejectBtn(id){
     change.classList.remove('text-[#002C5C]');
     change.classList.add('text-red-500');
     const parentInner = getParent.innerHTML;
-    getParent.querySelector('.statuss2').classList.remove('statuss2');
-    
-       
-    
  
     const rejectContainer = document.getElementById('rejected');
 
