@@ -20,6 +20,11 @@ document.getElementById('interview').addEventListener('click', function(event){
         let interMainCountNum = Number(interMainCount.innerText);
         interMainCountNum--;
         interMainCount.innerText = interMainCountNum;
+
+        const intNoJob = document.getElementById('int-no-job');
+        if(intTitleCountNum == '0'){
+          intNoJob.classList.remove('hidden');
+        }
       }
       else if(event.target.classList.contains('rej-btn')){
         const parent2 = event.target.parentNode.parentNode.parentNode;
@@ -35,5 +40,10 @@ document.getElementById('interview').addEventListener('click', function(event){
         let interMainCountNum = Number(interMainCount.innerText);
         interMainCountNum--;
         interMainCount.innerText = interMainCountNum;
+
+        const intNoJob = document.getElementById('int-no-job');
+        if(intTitleCountNum == '0'){
+          intNoJob.classList.remove('hidden');
+        }
       }
 })

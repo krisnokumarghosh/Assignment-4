@@ -19,6 +19,11 @@ document.getElementById('rejected').addEventListener('click' , function(event){
         const rejectTitleCount = document.getElementById('rej-title-count');
         let rejectTitleCountNum = Number(rejectTitleCount.innerText);
         rejectTitleCountNum--;
+
+        const rejNoJob = document.getElementById('rej-no-job');
+        if(rejectMainCountNum =='0'){
+            rejNoJob.classList.remove('hidden');
+        }
         
         if(rejectMainCountNum < 0 && rejectMainCountNum < 0){
             return;
@@ -40,6 +45,11 @@ document.getElementById('rejected').addEventListener('click' , function(event){
         const rejectTitleCount = document.getElementById('rej-title-count');
         let rejectTitleCountNum = Number(rejectTitleCount.innerText);
         rejectTitleCountNum--;
+
+        const rejNoJob = document.getElementById('rej-no-job');
+        if(rejectMainCountNum =='0'){
+            rejNoJob.classList.remove('hidden');
+        }
        
          if(rejectMainCountNum < 0 && rejectMainCountNum < 0){
             return;
